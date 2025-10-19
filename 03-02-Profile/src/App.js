@@ -16,17 +16,15 @@ function App() {
 }
 
 function Avatar() {
-  return (
-    <div>
+  return (   
       <img className="avatar" src="zhaopian.jpg" alt="" />
-    </div>
   );
 }
 
 function Intro() {
   return (
     <div>
-      <h1>Laucky Lau</h1>
+      <h1></h1>
       <p>
         我是一个帅哥, 不是刻意标榜，而是从旁人的目光与自我的感知里，慢慢拼凑出对
         “帅” 的具体注解 ——
@@ -64,9 +62,9 @@ function SkillList() {
       color: "#60DAFB",
     },
     {
-      skill: "Svelte",
+      skill: "NextJS",
       level: "beginner",
-      color: "#FF3B00",
+      color: "black",
     },
   ];
 
