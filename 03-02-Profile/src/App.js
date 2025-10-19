@@ -1,23 +1,93 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+        {/* Should contain one Skill component
+        for each web dev skill that you have,
+        customized with props */}
+        <SkillList />
+      </div>
+    </div>
+  );
+}
+
+function Avatar() {
+  return (
+    <div>
+      <img className="avatar" src="zhaopian.jpg" alt="" />
+    </div>
+  );
+}
+
+function Intro() {
+  return (
+    <div>
+      <h1>Laucky Lau</h1>
+      <p>
+        我是一个帅哥, 不是刻意标榜，而是从旁人的目光与自我的感知里，慢慢拼凑出对
+        “帅” 的具体注解 ——
+        它不只是皮囊的单薄定义，更藏在眉眼的神态、举止的分寸，还有待人时那份自在的温度里。
+      </p>
+    </div>
+  );
+}
+
+function SkillList() {
+  const skills = [
+    {
+      skill: "HTML+CSS",
+      level: "advanced",
+      color: "#2662EA",
+    },
+    {
+      skill: "JavaScript",
+      level: "advanced",
+      color: "#EFD81D",
+    },
+    {
+      skill: "Web Design",
+      level: "advanced",
+      color: "#C3DCAF",
+    },
+    {
+      skill: "Git and GitHub",
+      level: "intermediate",
+      color: "#E84F33",
+    },
+    {
+      skill: "React",
+      level: "advanced",
+      color: "#60DAFB",
+    },
+    {
+      skill: "Svelte",
+      level: "beginner",
+      color: "#FF3B00",
+    },
+  ];
+
+  return (
+    <div className="skill-list">
+      {skills.map((skill) => (
+        <SkillTap skillObj={skill} />
+      ))}
+    </div>
+  );
+}
+
+function SkillTap({ skillObj }) {
+  return (
+    <div className="skill" style={{ backgroundColor: skillObj.color }}>
+      <span>{skillObj.skill}</span>
+      <span>
+        {skillObj.level === "beginner" && "🍼"}
+        {skillObj.level === "intermediate" && "👌"}
+        {skillObj.level === "advanced" && "👍"}
+      </span>
     </div>
   );
 }
