@@ -11,6 +11,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+
+  .selected {
+    border: 1px solid #e03131;
+    background-color: #e03131;
+    color: #fff;
+    font-weight: bold;
+  }
 }
 
 .flashcards div {
@@ -24,11 +31,4 @@ body {
   text-align: center;
   padding: 20px;
   cursor: pointer;
-}
-
-div.selected {
-  border: 1px solid #e03131;
-  background-color: #e03131;
-  color: #fff;
-  font-weight: bold;
 }
