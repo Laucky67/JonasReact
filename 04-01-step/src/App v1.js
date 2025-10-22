@@ -11,9 +11,6 @@ const App = () => {
     <div>
       <Steps />
       <Steps />
-      <StepMessage step={1}><div>Learn how to {messages[0]}</div>😍</StepMessage>
-      <StepMessage step={2}><div>Learn how to {messages[0]}</div>👍</StepMessage>
-      <StepMessage step={3}><div>Learn how to {messages[0]}</div>👜</StepMessage>
     </div>
   );
 };
@@ -45,43 +42,17 @@ const Steps = () => {
             <div className={`${step >= 3 && "active"}`}>3</div>
           </div>
 
-          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+          <p className="message">
+            Step {step}: {messages[step - 1]}
+          </p>
 
           <div className="buttons">
-            <Button
-              bgColor={"#7950f2"}
-              textColor={"#fff"}
-              onClick={handlePrevious}
-            >
-              <span>👈</span>前一个
-            </Button>
-            <Button bgColor={"#7950f2"} textColor={"#fff"} onClick={handleNext}>
-              下一个<span>👉</span>
-            </Button>
+            <button onClick={handlePrevious}>Previous</button>
+            <button onClick={handleNext}>Next</button>
           </div>
         </div>
       )}
     </>
-  );
-};
-
-const Button = ({ bgColor, textColor, onClick, children }) => {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-};
-
-const StepMessage = ({ step, children }) => {
-  return (
-    <div className="message">
-      <h3>Step: {step}</h3>
-      {children}
-    </div>
   );
 };
 
